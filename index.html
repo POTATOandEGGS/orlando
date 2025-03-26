@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Guía Completa de Redes Informáticas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Guía completa sobre fundamentos de redes, direcciones IP, topologías y cableado de redes">
+
+    <link href="chema.css" rel="stylesheet">
+
+    <!-- FUENTES DE GOOGLE -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="cajita">
+        <h1>Fundamentos de Redes Informáticas</h1>
+
+        <!-- SECCIÓN 1: QUÉ ES UNA RED -->
+        <section id="que-es">
+            <h2>¿Qué es una Red?</h2>
+            <p>Una <strong>red informática</strong> es un sistema de interconexión entre dispositivos electrónicos (computadoras, servidores, routers, switches, etc.) que permite compartir recursos, información y servicios mediante protocolos de comunicación
+                estandarizados.
+            </p>
+
+            <div class="resaltado">
+                <h3>Características Clave:</h3>
+                <ul>
+                    <li><strong>Comunicación:</strong> Permite el intercambio de datos entre dispositivos.</li>
+                    <li><strong>Recursos compartidos:</strong> Impresoras, almacenamiento, conexión a Internet.</li>
+                    <li><strong>Protocolos:</strong> Conjunto de reglas que gobiernan la comunicación (TCP/IP, HTTP, FTP).</li>
+                    <li><strong>Topología:</strong> Disposición física o lógica de los dispositivos.</li>
+                    <li><strong>Escalabilidad:</strong> Capacidad de crecer según necesidades.</li>
+                </ul>
+
+                <h3>Ejemplos Prácticos:</h3>
+                <ul>
+                    <li>Red doméstica (WiFi para conectar celulares, laptops, smart TV)</li>
+                    <li>Red corporativa (oficinas interconectadas en una empresa)</li>
+                    <li>Internet (la red de redes global)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: DIRECCIÓN IP -->
+        <section id="ip">
+            <h2>Dirección IP</h2>
+            <p>Una <strong>dirección IP</strong> (Internet Protocol) es un identificador numérico único asignado a cada dispositivo conectado a una red que utiliza el protocolo IP para comunicarse.</p>
+
+            <div class="resaltado">
+                <h3>Tipos de Direcciones IP:</h3>
+                <ul>
+                    <li><strong>IPv4:</strong> Formato de 32 bits (4 octetos), ej. 192.168.1.1</li>
+                    <li><strong>IPv6:</strong> Formato de 128 bits, ej. 2001:0db8:85a3::8a2e:0370:7334</li>
+                    <li><strong>Pública:</strong> Visible en Internet, asignada por el ISP</li>
+                    <li><strong>Privada:</strong> Usada en redes locales (rangos reservados)</li>
+                    <li><strong>Dinámica:</strong> Cambia periódicamente (asignada por DHCP)</li>
+                    <li><strong>Estática:</strong> Fija, configurada manualmente</li>
+                </ul>
+
+                <h3>Clases de Redes por Dirección IP (IPv4)</h3>
+                <table>
+                    <tr>
+                        <th>Clase</th>
+                        <th>Rango</th>
+                        <th>Máscara</th>
+                        <th>Uso</th>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>1.0.0.0 - 126.255.255.255</td>
+                        <td>255.0.0.0</td>
+                        <td>Grandes corporaciones</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>128.0.0.0 - 191.255.255.255</td>
+                        <td>255.255.0.0</td>
+                        <td>Empresas medianas</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>192.0.0.0 - 223.255.255.255</td>
+                        <td>255.255.255.0</td>
+                        <td>Pequeñas redes</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td>224.0.0.0 - 239.255.255.255</td>
+                        <td>-</td>
+                        <td>Multicast</td>
+                    </tr>
+                    <tr>
+                        <td>E</td>
+                        <td>240.0.0.0 - 255.255.255.255</td>
+                        <td>-</td>
+                        <td>Experimental</td>
+                    </tr>
+                    <tr>
+                        <td>Loopback</td>
+                        <td>2127.0.0.0 a 127.255.255.255</td>
+                        <td>127.0.0.1</td>
+                        <td>Probar el stack TCP/IP del propio dispositivo, desarrollar aplicaciones de red sin hardware externo, aceder a servicios locales (ej: servidor web en tu PC)</td>
+                    </tr>
+                </table>
+
+                <h3>Subredes y CIDR</h3>
+                <p>Las redes pueden dividirse en subredes usando máscaras de red. La notación CIDR (Classless Inter-Domain Routing) indica el número de bits para la red (ej. 192.168.1.0/24).</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: CLASIFICACIÓN POR COBERTURA -->
+        <section id="cobertura">
+            <h2>Clasificación de Redes por Cobertura</h2>
+            <p>Las redes se clasifican según su alcance geográfico y tamaño:</p>
+
+            <div class="resaltado">
+                <h3>Tipos de Redes por Alcance:</h3>
+                <table>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Alcance</th>
+                        <th>Velocidad</th>
+                        <th>Tecnologías</th>
+                        <th>Ejemplo</th>
+                        <th>Imagen</th>
+                    </tr>
+                    <tr>
+                        <td>PAN</td>
+                        <td>10 metros</td>
+                        <td>1 Mbps - 2 Gbps</td>
+                        <td>Bluetooth, Zigbee, USB</td>
+                        <td>Conexión smartphone-audífonos</td>
+                        <td><img src="img/pan.png" alt="PAN"></td>
+                    </tr>
+                    <tr>
+                        <td>LAN</td>
+                        <td>Hasta 1 km</td>
+                        <td>10 Mbps - 10 Gbps</td>
+                        <td>Ethernet, WiFi</td>
+                        <td>Red de oficina o casa</td>
+                        <td><img src="img/lan.png" alt="LAN"></td>
+                    </tr>
+                    <tr>
+                        <td>CAN</td>
+                        <td>Cubre varios edificios dentro de un campus (1-5 km).</td>
+                        <td>1 Gbps- 10 Gbps</td>
+                        <td>MFibra óptica, Ethernet, WiFi</td>
+                        <td>Universidad con redes separadas en facultades, conectadas a un núcleo central.</td>
+                        <td><img src="img/can.png" alt="CAN"></td>
+                    </tr>
+                    <tr>
+                        <td>MAN</td>
+                        <td>Ciudad entera</td>
+                        <td>1 Gbps - 100 Gbps</td>
+                        <td>Fibra óptica, Metro Ethernet</td>
+                        <td>Red universitaria</td>
+                        <td><img src="img/man.png" alt="MAN"></td>
+                    </tr>
+                    <tr>
+                        <td>WAN</td>
+                        <td>Países/Continentes</td>
+                        <td>1 Mbps - 100 Gbps</td>
+                        <td>MPLS, Frame Relay, Satélite</td>
+                        <td>Internet</td>
+                        <td><img src="img/wan.png" alt="WAN"></td>
+                    </tr>
+                </table>
+
+                <h3>Comparativa de Tecnologías:</h3>
+                <ul>
+                    <li><strong>Ethernet:</strong> Estándar para LANs cableadas (IEEE 802.3)</li>
+                    <li><strong>WiFi:</strong> Para LANs inalámbricas (IEEE 802.11)</li>
+                    <li><strong>Fibra óptica:</strong> Alta velocidad para MAN/WAN</li>
+                    <li><strong>DSL/Cable:</strong> Conexiones domésticas a Internet</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: TOPOLOGÍAS DE RED -->
+        <section id="topologias">
+            <h2>Topologías de Red</h2>
+            <p>La topología de red define cómo están interconectados los dispositivos:</p>
+
+            <div class="resaltado">
+                <h3>Tipos de Topologías:</h3>
+                <table>
+                    <tr>
+                        <th>Topología</th>
+                        <th>Ventajas</th>
+                        <th>Desventajas</th>
+                        <th>Uso Típico</th>
+                        <th>Imagen</th>
+                    </tr>
+                    <tr>
+                        <td>Estrella</td>
+                        <td>Fácil administración, fallos localizados</td>
+                        <td>Dependencia del nodo central</td>
+                        <td>Redes domésticas, oficinas</td>
+                        <td><img src="img/estrella.png" alt="Estrella"></td>
+                    </tr>
+                    <tr>
+                        <td>Anillo</td>
+                        <td>Rendimiento consistente</td>
+                        <td>Un fallo afecta toda la red</td>
+                        <td>Redes token ring (obsoleto)</td>
+                        <td><img src="img/anillo.png" alt="Anillo"></td>
+                    </tr>
+                    <tr>
+                        <td>Doble anillo</td>
+                        <td>Tolerancai a fallos</td>
+                        <td>Mayor complejidad</td>
+                        <td>Redes token ring (obsoleto)</td>
+                        <td><img src="img/doble-anillo.png" alt="Doble Anillo"></td>
+                    </tr>
+                    <tr>
+                        <td>Bus</td>
+                        <td>Simple, bajo costo</td>
+                        <td>Difícil diagnóstico de fallos</td>
+                        <td>Redes antiguas (10Base2)</td>
+                        <td><img src="img/bus.png" alt="Bus"></td>
+                    </tr>
+                    <tr>
+                        <td>Malla</td>
+                        <td>Alta redundancia</td>
+                        <td>Costo elevado</td>
+                        <td>Redes críticas, militar</td>
+                        <td><img src="img/malla.png" alt="Malla"></td>
+                    </tr>
+                    <tr>
+                        <td>Árbol</td>
+                        <td>Escalable</td>
+                        <td>Dependencia de raíz</td>
+                        <td>Redes empresariales</td>
+                        <td><img src="img/arbol.png" alt="Árbol"></td>
+                    </tr>
+                    <tr>
+                        <td>Híbrida</td>
+                        <td>Adaptabilidady flexibilidad</td>
+                        <td>Complejidad y mantenimiento</td>
+                        <td>Redes token ring o redes empresariales jerárquicas</td>
+                        <td><img src="img/hibrida.png" alt="Híbrida"></td>
+                    </tr>
+                </table>
+
+                <h3>Topologías Lógicas vs Físicas:</h3>
+                <ul>
+                    <li><strong>Física:</strong> Cómo están conectados físicamente los dispositivos</li>
+                    <li><strong>Lógica:</strong> Cómo fluyen los datos (puede diferir de la física)</li>
+                </ul>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: CABLES Y NORMAS -->
+        <section id="cables">
+            <h2>Tipos de Cables y Normas</h2>
+            <p>Los cables son el medio físico que transporta las señales en una red:</p>
+
+            <div class="resaltado">
+                <h3>Cables de Par Trenzado:</h3>
+                <table>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Descripción</th>
+                        <th>Uso</th>
+                        <th>Velocidad</th>
+                    </tr>
+                    <tr>
+                        <td>UTP (Unshielded Twisted Pair)</td>
+                        <td>Sin blindaje, pares trenzados</td>
+                        <td>Redes Ethernet</td>
+                        <td>Hasta 10 Gbps</td>
+                    </tr>
+                    <tr>
+                        <td>STP (Shielded Twisted Pair)</td>
+                        <td>Con blindaje metálico</td>
+                        <td>Entornos industriales</td>
+                        <td>Hasta 10 Gbps</td>
+                    </tr>
+                    <tr>
+                        <td>FTP (Foiled Twisted Pair)</td>
+                        <td>Blindaje general</td>
+                        <td>Entornos con interferencias</td>
+                        <td>Hasta 10 Gbps</td>
+                    </tr>
+                </table>
+
+                <h3>Categorías de Cable UTP:</h3>
+                <ul>
+                    <li><strong>Cat5:</strong> 100 Mbps (obsoleto)</li>
+                    <li><strong>Cat5e:</strong> 1 Gbps (el más común)</li>
+                    <li><strong>Cat6:</strong> 10 Gbps hasta 55 m</li>
+                    <li><strong>Cat6a:</strong> 10 Gbps hasta 100 m</li>
+                    <li><strong>Cat7:</strong> 10 Gbps con mejor blindaje</li>
+                </ul>
+
+                <h3>Normas de Cableado RJ45:</h3>
+                <table>
+                    <tr>
+                        <th>Pin</th>
+                        <th>T568A</th>
+                        <th>T568B</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Blanco/Verde</td>
+                        <td>Blanco/Naranja</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Verde</td>
+                        <td>Naranja</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Blanco/Naranja</td>
+                        <td>Blanco/Verde</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Azul</td>
+                        <td>Azul</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Blanco/Azul</td>
+                        <td>Blanco/Azul</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Naranja</td>
+                        <td>Verde</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Blanco/Marrón</td>
+                        <td>Blanco/Marrón</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Marrón</td>
+                        <td>Marrón</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>
